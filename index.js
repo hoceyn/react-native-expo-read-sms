@@ -67,7 +67,7 @@ export async function requestReadSMSPermission() {
       PermissionsAndroid.PERMISSIONS.RECEIVE_SMS,
       PermissionsAndroid.PERMISSIONS.READ_SMS,
     ]);
-    if (status === PermissionsAndroid.RESULTS.GRANTED) return true;
+        if (status["android.permission.READ_SMS"] === "granted") return true;
     if (status === PermissionsAndroid.RESULTS.DENIED) {
       console.log("Read Sms permission denied by user.", status);
     } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
